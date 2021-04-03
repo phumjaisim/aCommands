@@ -12,9 +12,9 @@ public final class aCommands extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        System.out.println("aCommand V2.0 by iOnly");
-        System.out.println("aCommands has been operated");
-        System.out.println("Beginning connect to Dashboard Database");
+        System.out.println("[aCommands] aCommand V2.0 by iOnly");
+        System.out.println("[aCommands] aCommands has been operated");
+        System.out.println("[aCommands] attempting to connecting to Dashboard database.");
         this.SQL = new MySQL();
 
         try {
@@ -22,20 +22,22 @@ public final class aCommands extends JavaPlugin {
         } catch (ClassNotFoundException e) {
             //e.printStackTrace();
             Bukkit.getLogger().info("Database is not connected");
-            System.out.println("Database is not connected!");
+            System.out.println("Database was not connected!");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
         if (SQL.isConnected()) {
             Bukkit.getLogger().info("Database is connected");
-            System.out.println("Database is connected!");
+            System.out.println("Database was connected!");
         }
 
     }
 
     @Override
     public void onDisable() {
+        System.out.println("[aCommands] attempting to disconnecting from Dashboard database.");
         SQL.disconnect();
+        System.out.println("Database was disconnected!");
     }
 }
