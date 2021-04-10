@@ -1,2 +1,2 @@
 com\ionly\acommands\aCommands.class
-com\ionly\acommands\sql\MySQL.class
+com\ionly\acommands\events\PlayerJoin.class
